@@ -79,6 +79,12 @@
         <target>Klientinteraktion</target>
       </segment>
     </unit>
+    <unit id="app.prerenderLink">
+      <segment>
+        <source>Test prerendering</source>
+        <target>Testa förrendering</target>
+      </segment>
+    </unit>
     <unit id="app.locale">
       <segment>
         <source>Current locale</source>
@@ -89,6 +95,48 @@
       <segment>
         <source>Languages</source>
         <target>Språk</target>
+      </segment>
+    </unit>
+    <unit id="prerender.title">
+      <segment>
+        <source>Prerendered Ionic route</source>
+        <target>Förrenderad Ionic-rutt</target>
+      </segment>
+    </unit>
+    <unit id="prerender.status">
+      <segment>
+        <source> Static build output </source>
+        <target> Statiskt byggresultat </target>
+      </segment>
+    </unit>
+    <unit id="prerender.heading">
+      <segment>
+        <source> Ionic prerendering works </source>
+        <target> Förrendering med Ionic fungerar </target>
+      </segment>
+    </unit>
+    <unit id="prerender.description">
+      <segment>
+        <source> Angular generated this localized route at build time, including Ionic&apos;s server-rendered component markup. </source>
+        <target> Angular genererade den här lokaliserade rutten vid byggtillfället, inklusive Ionics serverrenderade komponentmarkering. </target>
+      </segment>
+    </unit>
+    <unit id="prerender.controls">
+      <segment>
+        <source>Prerender controls</source>
+        <target>Kontroller för förrendering</target>
+      </segment>
+    </unit>
+    <unit id="prerender.interaction">
+      <segment>
+        <source> Client interaction </source>
+        <target> Klientinteraktion </target>
+      </segment>
+    </unit>
+    <unit id="prerender.homeLink">
+      <segment>
+        <source>Back to dynamic SSR</source>
+        <target>Tillbaka till dynamisk SSR</target>
       </segment>
     </unit>
   </file>

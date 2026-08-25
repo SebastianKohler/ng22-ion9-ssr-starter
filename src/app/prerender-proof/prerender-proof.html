@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title i18n="Prerender page title@@prerender.title">Prerendered Ionic route</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <main class="proof" aria-labelledby="prerender-title">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle i18n="Prerender proof status@@prerender.status">
+          Static build output
+        </ion-card-subtitle>
+        <ion-card-title id="prerender-title" i18n="Prerender proof heading@@prerender.heading">
+          Ionic prerendering works
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p i18n="Prerender proof description@@prerender.description">
+          Angular generated this localized route at build time, including Ionic's server-rendered
+          component markup.
+        </p>
+
+        <div class="actions" aria-label="Prerender controls" i18n-aria-label="@@prerender.controls">
+          <ion-button type="button" (click)="incrementInteractionCount()">
+            <span i18n="Prerender interaction button@@prerender.interaction">
+              Client interaction
+            </span>
+            &nbsp;{{ interactionCount() }}
+          </ion-button>
+
+          <ion-button fill="outline" routerLink="/">
+            <span i18n="Home route link@@prerender.homeLink">Back to dynamic SSR</span>
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </main>
+</ion-content>

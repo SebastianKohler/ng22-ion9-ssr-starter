@@ -3,7 +3,7 @@
   <file id="ngi18n" original="ng.template">
     <unit id="app.title">
       <notes>
-        <note category="location">src/app/app.html:5,10</note>
+        <note category="location">src/app/home/home.html:4,9</note>
         <note category="description">Title in the top toolbar</note>
         <note category="meaning">Application title</note>
       </notes>
@@ -13,7 +13,7 @@
     </unit>
     <unit id="app.status">
       <notes>
-        <note category="location">src/app/app.html:15,16</note>
+        <note category="location">src/app/home/home.html:13,14</note>
         <note category="description">Proof status</note>
       </notes>
       <segment>
@@ -22,7 +22,7 @@
     </unit>
     <unit id="app.heading">
       <notes>
-        <note category="location">src/app/app.html:18,19</note>
+        <note category="location">src/app/home/home.html:15,17</note>
         <note category="description">Proof heading</note>
       </notes>
       <segment>
@@ -31,7 +31,7 @@
     </unit>
     <unit id="app.introduction">
       <notes>
-        <note category="location">src/app/app.html:24,28</note>
+        <note category="location">src/app/home/home.html:21,25</note>
         <note category="description">Proof introduction</note>
       </notes>
       <segment>
@@ -40,7 +40,7 @@
     </unit>
     <unit id="check.ssr.title">
       <notes>
-        <note category="location">src/app/app.html:31,32</note>
+        <note category="location">src/app/home/home.html:28,29</note>
         <note category="description">SSR check title</note>
       </notes>
       <segment>
@@ -49,7 +49,7 @@
     </unit>
     <unit id="check.ssr.description">
       <notes>
-        <note category="location">src/app/app.html:33,35</note>
+        <note category="location">src/app/home/home.html:30,32</note>
         <note category="description">SSR check description</note>
       </notes>
       <segment>
@@ -58,7 +58,7 @@
     </unit>
     <unit id="check.ionic.title">
       <notes>
-        <note category="location">src/app/app.html:41,42</note>
+        <note category="location">src/app/home/home.html:38,39</note>
         <note category="description">Ionic check title</note>
       </notes>
       <segment>
@@ -67,7 +67,7 @@
     </unit>
     <unit id="check.ionic.description">
       <notes>
-        <note category="location">src/app/app.html:43,45</note>
+        <note category="location">src/app/home/home.html:40,43</note>
         <note category="description">Ionic check description</note>
       </notes>
       <segment>
@@ -76,16 +76,16 @@
     </unit>
     <unit id="check.hydration.title">
       <notes>
-        <note category="location">src/app/app.html:52,54</note>
+        <note category="location">src/app/home/home.html:48,49</note>
         <note category="description">Hydration check title</note>
       </notes>
       <segment>
-        <source> Angular hydration </source>
+        <source>Angular hydration</source>
       </segment>
     </unit>
     <unit id="check.hydration.description">
       <notes>
-        <note category="location">src/app/app.html:55,58</note>
+        <note category="location">src/app/home/home.html:50,53</note>
         <note category="description">Hydration check description</note>
       </notes>
       <segment>
@@ -94,7 +94,7 @@
     </unit>
     <unit id="status.disabled">
       <notes>
-        <note category="location">src/app/app.html:59,61</note>
+        <note category="location">src/app/home/home.html:54,56</note>
         <note category="description">Disabled status</note>
       </notes>
       <segment>
@@ -103,7 +103,7 @@
     </unit>
     <unit id="app.controls">
       <notes>
-        <note category="location">src/app/app.html:64</note>
+        <note category="location">src/app/home/home.html:59</note>
       </notes>
       <segment>
         <source>Proof controls</source>
@@ -111,16 +111,25 @@
     </unit>
     <unit id="app.interaction">
       <notes>
-        <note category="location">src/app/app.html:66,68</note>
+        <note category="location">src/app/home/home.html:61,63</note>
         <note category="description">Interaction button label</note>
       </notes>
       <segment>
         <source>Client interaction</source>
       </segment>
     </unit>
+    <unit id="app.prerenderLink">
+      <notes>
+        <note category="location">src/app/home/home.html:66,69</note>
+        <note category="description">Prerender route link</note>
+      </notes>
+      <segment>
+        <source>Test prerendering</source>
+      </segment>
+    </unit>
     <unit id="app.locale">
       <notes>
-        <note category="location">src/app/app.html:71,72</note>
+        <note category="location">src/app/home/home.html:70,71</note>
         <note category="description">Current locale label</note>
       </notes>
       <segment>
@@ -129,10 +138,72 @@
     </unit>
     <unit id="app.languages">
       <notes>
-        <note category="location">src/app/app.html:76</note>
+        <note category="location">src/app/home/home.html:75</note>
       </notes>
       <segment>
         <source>Languages</source>
+      </segment>
+    </unit>
+    <unit id="prerender.title">
+      <notes>
+        <note category="location">src/app/prerender-proof/prerender-proof.html:3,7</note>
+        <note category="description">Prerender page title</note>
+      </notes>
+      <segment>
+        <source>Prerendered Ionic route</source>
+      </segment>
+    </unit>
+    <unit id="prerender.status">
+      <notes>
+        <note category="location">src/app/prerender-proof/prerender-proof.html:12,14</note>
+        <note category="description">Prerender proof status</note>
+      </notes>
+      <segment>
+        <source> Static build output </source>
+      </segment>
+    </unit>
+    <unit id="prerender.heading">
+      <notes>
+        <note category="location">src/app/prerender-proof/prerender-proof.html:15,17</note>
+        <note category="description">Prerender proof heading</note>
+      </notes>
+      <segment>
+        <source> Ionic prerendering works </source>
+      </segment>
+    </unit>
+    <unit id="prerender.description">
+      <notes>
+        <note category="location">src/app/prerender-proof/prerender-proof.html:21,25</note>
+        <note category="description">Prerender proof description</note>
+      </notes>
+      <segment>
+        <source> Angular generated this localized route at build time, including Ionic&apos;s server-rendered component markup. </source>
+      </segment>
+    </unit>
+    <unit id="prerender.controls">
+      <notes>
+        <note category="location">src/app/prerender-proof/prerender-proof.html:25</note>
+      </notes>
+      <segment>
+        <source>Prerender controls</source>
+      </segment>
+    </unit>
+    <unit id="prerender.interaction">
+      <notes>
+        <note category="location">src/app/prerender-proof/prerender-proof.html:28,30</note>
+        <note category="description">Prerender interaction button</note>
+      </notes>
+      <segment>
+        <source> Client interaction </source>
+      </segment>
+    </unit>
+    <unit id="prerender.homeLink">
+      <notes>
+        <note category="location">src/app/prerender-proof/prerender-proof.html:34,37</note>
+        <note category="description">Home route link</note>
+      </notes>
+      <segment>
+        <source>Back to dynamic SSR</source>
       </segment>
     </unit>
   </file>

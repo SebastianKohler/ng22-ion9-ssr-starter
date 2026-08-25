@@ -1,5 +1,6 @@
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
+import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const port = process.env['SSR_SMOKE_PORT'] ?? '4217';
@@ -65,10 +66,25 @@ async function verifyLocale(path, locale, expectedText) {
   assert(!html.includes('ngh='), `${path} unexpectedly contains Angular hydration markers.`);
 }
 
+async function verifyPrerenderedFile(locale, expectedText) {
+  const outputPath = resolve('dist/ng22-ion9-ssr-starter/browser', locale, 'prerender/index.html');
+  const html = await readFile(outputPath, 'utf8');
+
+  assert(html.includes(`<html lang="${locale}"`), `${outputPath} has the wrong lang.`);
+  assert(html.includes(expectedText), `${outputPath} is not translated as expected.`);
+  assert(html.includes('<ion-button'), `${outputPath} is missing the Ionic button.`);
+  assert(html.includes('sc-ion-button'), `${outputPath} is missing Ionic serialized markup.`);
+  assert(!html.includes('ngh='), `${outputPath} unexpectedly contains hydration markers.`);
+}
+
 try {
   await waitUntilReady();
   await verifyLocale('/en/', 'en', 'Server rendering works');
   await verifyLocale('/sv/', 'sv', 'Serverrendering fungerar');
+  await verifyPrerenderedFile('en', 'Ionic prerendering works');
+  await verifyPrerenderedFile('sv', 'Förrendering med Ionic fungerar');
+  await verifyLocale('/en/prerender', 'en', 'Ionic prerendering works');
+  await verifyLocale('/sv/prerender', 'sv', 'Förrendering med Ionic fungerar');
 
   const redirect = await fetch(`${origin}/`, {
     headers: { 'Accept-Language': 'sv-SE,sv;q=0.9,en;q=0.8' },
@@ -80,7 +96,9 @@ try {
     '/ did not select Swedish from Accept-Language.',
   );
 
-  console.log('SSR smoke test passed for en, sv, Ionic markup, and locale routing.');
+  console.log(
+    'SSR smoke test passed for dynamic SSR, prerendered en/sv routes, Ionic markup, and locale routing.',
+  );
 } finally {
   if (server.exitCode === null) {
     server.kill();

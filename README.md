@@ -8,12 +8,13 @@ web components while retaining the following Angular application features:
 - the `@angular/build:application` builder
 - Ionic 9 standalone web components
 - dynamic server-side rendering
+- build-time prerendering of an Ionic route
 - compile-time Angular i18n for English and Swedish
 - client bootstrap without Angular hydration (an Ionic 9 limitation)
 
-The landing page is deliberately built from Ionic components and includes a
-small signal-driven interaction. This makes both server output and client
-startup easy to verify.
+The dynamic landing page and the prerendered proof route are deliberately built
+from Ionic components and include small signal-driven interactions. This makes
+the two server-rendering modes and client startup easy to verify.
 
 ## Development SSR
 
@@ -56,6 +57,8 @@ listens on port 4000 by default:
 
 - `http://localhost:4000/en/` renders the English server bundle.
 - `http://localhost:4000/sv/` renders the Swedish server bundle.
+- `http://localhost:4000/en/prerender` serves the English prerendered Ionic page.
+- `http://localhost:4000/sv/prerender` serves the Swedish prerendered Ionic page.
 - `http://localhost:4000/` redirects according to `Accept-Language`, falling
   back to English.
 
@@ -69,11 +72,11 @@ by CI and `server.mjs` would run under a container or process manager behind a
 reverse proxy. The `serve:ssr` script is a convenient way to run that production
 artifact directly, both locally and in simple deployments.
 
-| Command                                                               | Mode              | SSR         | Localization                            |
-| --------------------------------------------------------------------- | ----------------- | ----------- | --------------------------------------- |
-| `npm start`                                                           | Development       | Dynamic SSR | English at `/`                          |
-| `npm run start:sv`                                                    | Development       | Dynamic SSR | Swedish at `/`                          |
-| `npm run build` followed by `npm run serve:ssr:ng22-ion9-ssr-starter` | Production bundle | Dynamic SSR | English at `/en/` and Swedish at `/sv/` |
+| Command                                                               | Mode              | SSR                          | Localization                            |
+| --------------------------------------------------------------------- | ----------------- | ---------------------------- | --------------------------------------- |
+| `npm start`                                                           | Development       | Dynamic SSR                  | English at `/`                          |
+| `npm run start:sv`                                                    | Development       | Dynamic SSR                  | Swedish at `/`                          |
+| `npm run build` followed by `npm run serve:ssr:ng22-ion9-ssr-starter` | Production bundle | Dynamic SSR and prerendering | English at `/en/` and Swedish at `/sv/` |
 
 After building, run the self-contained SSR smoke test. It starts and stops the production server automatically.
 
@@ -81,15 +84,19 @@ After building, run the self-contained SSR smoke test. It starts and stops the p
 npm run test:ssr:smoke
 ```
 
-The smoke test checks both translations, locale headers and base paths, Ionic
-server markup, absence of Angular hydration markers, and language negotiation.
+The smoke test checks both translations, locale headers and base paths, the
+generated prerender files, Ionic server markup, absence of Angular hydration
+markers, and language negotiation.
 
 ## Implementation notes
 
-Dynamic SSR is selected in `src/app/app.routes.server.ts` with
-`RenderMode.Server`. The browser configuration uses `provideIonicAngular()`,
-while the server configuration adds `IonicServerModule` through
-`importProvidersFrom()`.
+The `/prerender` route is selected for build-time rendering in
+`src/app/app.routes.server.ts` with `RenderMode.Prerender`; the wildcard route
+keeps every other route on dynamic SSR with `RenderMode.Server`. A production
+build emits localized static pages at
+`browser/{en,sv}/prerender/index.html`. The browser configuration uses
+`provideIonicAngular()`, while the server configuration adds
+`IonicServerModule` through `importProvidersFrom()`.
 
 Angular client hydration is intentionally disabled because Ionic 9.0.0 does
 not support it in this configuration. `IonicServerModule` still runs Ionic's
