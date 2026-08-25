@@ -1,7 +1,7 @@
 # Angular 22 + Ionic 9 SSR starter
 
-This repository is a proof of concept for the target architecture of
-`digital-edition-frontend-ng`:
+This repository is a proof of concept demonstrating Angular 22 with Ionic 9
+web components while retaining the following Angular application features:
 
 - Angular 22 with standalone bootstrap
 - zoneless change detection
@@ -9,7 +9,7 @@ This repository is a proof of concept for the target architecture of
 - Ionic 9 standalone web components
 - dynamic server-side rendering
 - compile-time Angular i18n for English and Swedish
-- no Angular client hydration
+- client bootstrap without Angular hydration (an Ionic 9 limitation)
 
 The landing page is deliberately built from Ionic components and includes a
 small signal-driven interaction. This makes both server output and client
@@ -62,8 +62,7 @@ listens on port 4000 by default:
 The application builder emits separate browser and server entry points below
 `dist/ng22-ion9-ssr-starter/{browser,server}/{en,sv}`. Its generated
 `AngularNodeAppEngine` dispatches requests to the matching localized server
-entry point. This is the application-builder equivalent of the handwritten
-`proxy-server.js` used by `digital-edition-frontend-ng`.
+entry point.
 
 In a real production environment, build artifacts would normally be produced
 by CI and `server.mjs` would run under a container or process manager behind a
@@ -92,11 +91,31 @@ Dynamic SSR is selected in `src/app/app.routes.server.ts` with
 while the server configuration adds `IonicServerModule` through
 `importProvidersFrom()`.
 
-`provideClientHydration()` is intentionally absent. `IonicServerModule` still
-runs Ionic's server-side component serialization before Angular sends the
-document; that Ionic/Stencil operation is distinct from Angular client
-hydration. In the browser, Angular performs a normal client bootstrap and
-replaces the server-rendered application.
+Angular client hydration is intentionally disabled because Ionic 9.0.0 does
+not support it in this configuration. `IonicServerModule` still runs Ionic's
+server-side component serialization before Angular sends the document; that
+Ionic/Stencil operation is distinct from Angular client hydration. In the
+browser, Angular performs a normal client bootstrap and replaces the
+server-rendered application.
+
+To reproduce the hydration incompatibility, temporarily add i18n-enabled
+hydration to `src/app/app.config.ts`:
+
+```ts
+import {
+  provideClientHydration,
+  withI18nSupport,
+} from '@angular/platform-browser';
+
+// Add to the application providers:
+provideClientHydration(withI18nSupport()),
+```
+
+Then rebuild, start the production SSR server, and load `/en/` or `/sv/` in a
+browser. Angular reports an `NG0500` DOM-mismatch error involving
+Ionic/Stencil SSR markers, and client interaction does not initialize
+correctly. Using `provideClientHydration()` without `withI18nSupport()` is not
+an equivalent test: Angular skips hydration for the localized root content.
 
 The localized build is configured in `angular.json`. English is the source
 locale and Swedish translations live in `src/locale/messages.sv.xlf`. Extract
