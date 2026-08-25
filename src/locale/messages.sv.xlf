@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en" trgLang="sv">
+  <file id="ngi18n" original="ng.template">
+    <unit id="app.title">
+      <segment>
+        <source> Angular 22 + Ionic 9 </source>
+        <target> Angular 22 + Ionic 9 </target>
+      </segment>
+    </unit>
+    <unit id="app.status">
+      <segment>
+        <source> Proof of concept </source>
+        <target> Koncepttest </target>
+      </segment>
+    </unit>
+    <unit id="app.heading">
+      <segment>
+        <source> Server rendering works </source>
+        <target> Serverrendering fungerar </target>
+      </segment>
+    </unit>
+    <unit id="app.introduction">
+      <segment>
+        <source> This page combines Angular 22, zoneless change detection, Ionic 9 web components, dynamic SSR, and compile-time localization. </source>
+        <target> Den här sidan kombinerar Angular 22, zonlös ändringsdetektering, Ionic 9-webbkomponenter, dynamisk SSR och lokalisering vid kompilering. </target>
+      </segment>
+    </unit>
+    <unit id="check.ssr.title">
+      <segment>
+        <source>Dynamic SSR</source>
+        <target>Dynamisk SSR</target>
+      </segment>
+    </unit>
+    <unit id="check.ssr.description">
+      <segment>
+        <source> The page is rendered for every request. </source>
+        <target> Sidan renderas för varje begäran. </target>
+      </segment>
+    </unit>
+    <unit id="check.ionic.title">
+      <segment>
+        <source>Ionic server output</source>
+        <target>Ionic-serverutdata</target>
+      </segment>
+    </unit>
+    <unit id="check.ionic.description">
+      <segment>
+        <source> Ionic components serialize their shadow content on the server. </source>
+        <target> Ionic-komponenter serialiserar sitt skugginnehåll på servern. </target>
+      </segment>
+    </unit>
+    <unit id="check.hydration.title">
+      <segment>
+        <source> Angular hydration </source>
+        <target> Angular-hydrering </target>
+      </segment>
+    </unit>
+    <unit id="check.hydration.description">
+      <segment>
+        <source> Client hydration is intentionally disabled for Ionic compatibility. </source>
+        <target> Klienthydrering är avsiktligt inaktiverad för Ionic-kompatibilitet. </target>
+      </segment>
+    </unit>
+    <unit id="status.disabled">
+      <segment>
+        <source> Disabled </source>
+        <target> Inaktiverad </target>
+      </segment>
+    </unit>
+    <unit id="app.controls">
+      <segment>
+        <source>Proof controls</source>
+        <target>Testkontroller</target>
+      </segment>
+    </unit>
+    <unit id="app.interaction">
+      <segment>
+        <source>Client interaction</source>
+        <target>Klientinteraktion</target>
+      </segment>
+    </unit>
+    <unit id="app.locale">
+      <segment>
+        <source>Current locale</source>
+        <target>Aktuellt språk</target>
+      </segment>
+    </unit>
+    <unit id="app.languages">
+      <segment>
+        <source>Languages</source>
+        <target>Språk</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>

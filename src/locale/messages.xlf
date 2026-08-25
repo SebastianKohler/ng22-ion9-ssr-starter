@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en">
+  <file id="ngi18n" original="ng.template">
+    <unit id="app.title">
+      <notes>
+        <note category="location">src/app/app.html:5,10</note>
+        <note category="description">Title in the top toolbar</note>
+        <note category="meaning">Application title</note>
+      </notes>
+      <segment>
+        <source> Angular 22 + Ionic 9 </source>
+      </segment>
+    </unit>
+    <unit id="app.status">
+      <notes>
+        <note category="location">src/app/app.html:15,16</note>
+        <note category="description">Proof status</note>
+      </notes>
+      <segment>
+        <source> Proof of concept </source>
+      </segment>
+    </unit>
+    <unit id="app.heading">
+      <notes>
+        <note category="location">src/app/app.html:18,19</note>
+        <note category="description">Proof heading</note>
+      </notes>
+      <segment>
+        <source> Server rendering works </source>
+      </segment>
+    </unit>
+    <unit id="app.introduction">
+      <notes>
+        <note category="location">src/app/app.html:24,28</note>
+        <note category="description">Proof introduction</note>
+      </notes>
+      <segment>
+        <source> This page combines Angular 22, zoneless change detection, Ionic 9 web components, dynamic SSR, and compile-time localization. </source>
+      </segment>
+    </unit>
+    <unit id="check.ssr.title">
+      <notes>
+        <note category="location">src/app/app.html:31,32</note>
+        <note category="description">SSR check title</note>
+      </notes>
+      <segment>
+        <source>Dynamic SSR</source>
+      </segment>
+    </unit>
+    <unit id="check.ssr.description">
+      <notes>
+        <note category="location">src/app/app.html:33,35</note>
+        <note category="description">SSR check description</note>
+      </notes>
+      <segment>
+        <source> The page is rendered for every request. </source>
+      </segment>
+    </unit>
+    <unit id="check.ionic.title">
+      <notes>
+        <note category="location">src/app/app.html:41,42</note>
+        <note category="description">Ionic check title</note>
+      </notes>
+      <segment>
+        <source>Ionic server output</source>
+      </segment>
+    </unit>
+    <unit id="check.ionic.description">
+      <notes>
+        <note category="location">src/app/app.html:43,45</note>
+        <note category="description">Ionic check description</note>
+      </notes>
+      <segment>
+        <source> Ionic components serialize their shadow content on the server. </source>
+      </segment>
+    </unit>
+    <unit id="check.hydration.title">
+      <notes>
+        <note category="location">src/app/app.html:52,54</note>
+        <note category="description">Hydration check title</note>
+      </notes>
+      <segment>
+        <source> Angular hydration </source>
+      </segment>
+    </unit>
+    <unit id="check.hydration.description">
+      <notes>
+        <note category="location">src/app/app.html:55,58</note>
+        <note category="description">Hydration check description</note>
+      </notes>
+      <segment>
+        <source> Client hydration is intentionally disabled for Ionic compatibility. </source>
+      </segment>
+    </unit>
+    <unit id="status.disabled">
+      <notes>
+        <note category="location">src/app/app.html:59,61</note>
+        <note category="description">Disabled status</note>
+      </notes>
+      <segment>
+        <source> Disabled </source>
+      </segment>
+    </unit>
+    <unit id="app.controls">
+      <notes>
+        <note category="location">src/app/app.html:64</note>
+      </notes>
+      <segment>
+        <source>Proof controls</source>
+      </segment>
+    </unit>
+    <unit id="app.interaction">
+      <notes>
+        <note category="location">src/app/app.html:66,68</note>
+        <note category="description">Interaction button label</note>
+      </notes>
+      <segment>
+        <source>Client interaction</source>
+      </segment>
+    </unit>
+    <unit id="app.locale">
+      <notes>
+        <note category="location">src/app/app.html:71,72</note>
+        <note category="description">Current locale label</note>
+      </notes>
+      <segment>
+        <source>Current locale</source>
+      </segment>
+    </unit>
+    <unit id="app.languages">
+      <notes>
+        <note category="location">src/app/app.html:76</note>
+      </notes>
+      <segment>
+        <source>Languages</source>
+      </segment>
+    </unit>
+  </file>
+</xliff>
